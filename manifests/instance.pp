@@ -39,6 +39,7 @@ define redis::instance (
   $slave_of       = false,
   $slave_of_port  = $name,
   $slave_priority = '100',
+  $requirepass    = false,
 ) {
 
   File["/etc/init/redis-${name}.conf"]  -> Service["redis-${name}"]
